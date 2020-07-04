@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand">Omdb Movie Search</a>
+      <router-link to="/" class="navbar-brand">Omdb Movie Search</router-link>
       <form class="form-inline" @submit.prevent>
         <input
           class="form-control mr-sm-2"
