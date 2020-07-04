@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <div class="row">
+     <div class="row">
       <h1>{{ m.Title }} - ({{ m.Year }})</h1>
     </div>
     <div class="row">
       <div class="col-md-4"><img :src="m.Poster" alt="Movie Poster" /></div>
-      <div class="col-md-8">
+      <div class="col-md-8 mt-3 mt-md-0">
         <h6 class="mb-3">
           <span class="badge badge-info">{{ m.Rated }}</span> Released:
           {{ m.Released }} - Runtime : {{ m.Runtime }} - Genre: {{ m.Genre }}
@@ -24,7 +24,7 @@
         <p><span class="font-weight-bold">Awards:</span> {{ m.Awards }}</p>
       </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-5 mb-3">
       <button @click="back" class="btn btn-info btn-sm mx-auto">
         Back to search
       </button>
@@ -52,4 +52,13 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+@media (max-width: 767px) {
+  h1{
+    font-size: 1.4rem;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+</style>

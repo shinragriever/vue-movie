@@ -5,13 +5,15 @@
       <form class="form-inline" @submit.prevent>
         <input
           class="form-control mr-sm-2"
+          
           type="search"
           placeholder="Search"
           aria-label="Search"
           v-model="searchMovie"
         />
         <button
-          class="btn btn-outline-success my-2 my-sm-0"
+          class="btn btn-outline-success my-2 my-sm-0 mx-auto"
+          
           @click="fetchMovies"
         >
           Search
@@ -42,4 +44,14 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@media (max-width: 767px) {
+  .btn {
+    display: block;
+    width: 100%;
+  };
+  h1{
+    font-size: 2rem;
+  }
+}
+</style>
