@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-     <div class="row">
+    <div class="row">
       <h1>{{ m.Title }} - ({{ m.Year }})</h1>
     </div>
     <div class="row">
@@ -54,7 +54,7 @@ export default {
 
 <style lang="scss">
 @media (max-width: 767px) {
-  h1{
+  h1 {
     font-size: 1.4rem;
     margin: 0 auto;
     margin-bottom: 5px;
