@@ -24,8 +24,6 @@
   </div>
 </template>
 <script>
-
-
 export default {
   data() {
     return {
@@ -34,13 +32,14 @@ export default {
     };
   },
   methods: {
-    fetchMovies(){
-      if(!(this.$router.currentRoute.path === "/")) {this.$router.push({path: "/"})}
-      this.$store.dispatch("fetchMovies", this.searchMovie)
-
+    fetchMovies() {
+      if (!(this.$router.currentRoute.path === "/")) {
+        this.$router.push({ path: "/" });
+      }
+      this.$store.dispatch("fetchMovies", this.searchMovie);
     }
   }
-}
+};
 </script>
 
 <style lang="scss"></style>
