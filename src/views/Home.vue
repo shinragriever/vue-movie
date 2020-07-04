@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    
+    <div  class="row mt-4">
+      <moviecard v-for="m in movies" :key="m.imdbID" :movie="m" class="mx-auto" />
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import moviecard from "./MovieCard";
+import { mapGetters } from "vuex";
 export default {
-  name: "Home",
+  data() {
+    return {
+      
+    }
+  },
   components: {
-    HelloWorld
+    moviecard
+  },
+  computed: {
+    ...mapGetters({movies:"getMovies"})
   }
 };
 </script>

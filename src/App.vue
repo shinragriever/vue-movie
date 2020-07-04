@@ -1,32 +1,46 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand">Omdb Movie Search</a>
+      <form class="form-inline" @submit.prevent>
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          v-model="searchMovie"
+        />
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          @click="fetchMovies"
+        >
+          Search
+        </button>
+      </form>
+    </nav>
+    <div class="container-fluid">
+      <router-view></router-view>
     </div>
-    <router-view />
   </div>
 </template>
+<script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
+export default {
+  data() {
+    return {
+      movies: null,
+      searchMovie: null
+    };
+  },
+  methods: {
+    fetchMovies(){
+      if(!(this.$router.currentRoute.path === "/")) {this.$router.push({path: "/"})}
+      this.$store.dispatch("fetchMovies", this.searchMovie)
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
     }
   }
 }
-</style>
+</script>
+
+<style lang="scss"></style>
